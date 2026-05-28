@@ -1,0 +1,57 @@
+/* ============================================
+   RESPONSIVE.CSS — Media Queries
+   Edit breakpoints and layout shifts here
+   ============================================ */
+
+/* ── Tablet & Small Laptops (≤ 1024px) ── */
+@media (max-width: 1024px) {
+  /* Hero: stack into single column, hide image panel */
+  #hero               { grid-template-columns: 1fr; min-height: auto; }
+  .hero-img-wrap      { display: none; }
+  .hero-text          { padding: 6rem 8vw 6rem; }
+
+  /* About: stack, hide image column */
+  #about              { grid-template-columns: 1fr; }
+  .about-img-wrap     { display: none; }
+
+  /* Services: stack cards */
+  .services-grid      { grid-template-columns: 1fr; }
+
+  /* Testimonials: 2-column */
+  .testimonials-grid  { grid-template-columns: 1fr 1fr; }
+
+  /* Blog: single column */
+  .blog-grid          { grid-template-columns: 1fr; }
+
+  /* Contact: stack */
+  #contact            { grid-template-columns: 1fr; }
+}
+
+/* ── Mobile (≤ 768px) ── */
+@media (max-width: 768px) {
+  section { padding: 5rem 5vw; }
+
+  /* Hide desktop nav, show hamburger */
+  .nav-links  { display: none; }
+  .nav-cta    { display: none; }
+  .hamburger  { display: flex; }
+
+  /* Portfolio: 2-column grid */
+  .portfolio-grid                             { grid-template-columns: 1fr 1fr; }
+  .portfolio-item:nth-child(1)                { grid-column: span 2; }
+  .portfolio-item:nth-child(5)                { grid-column: span 2; }
+
+  /* Contact form: stack name fields */
+  .form-row { grid-template-columns: 1fr; }
+
+  /* Testimonials: single column */
+  .testimonials-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Small Mobile (≤ 480px) ── */
+@media (max-width: 480px) {
+  /* Portfolio: single column */
+  .portfolio-grid                             { grid-template-columns: 1fr; }
+  .portfolio-item:nth-child(1)                { grid-column: span 1; }
+  .portfolio-item:nth-child(5)                { grid-column: span 1; }
+}

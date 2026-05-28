@@ -1,0 +1,111 @@
+/* ============================================
+   NAV.CSS — Navigation Bar & Mobile Menu
+   ============================================ */
+
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 5vw;
+  background: rgba(253, 250, 246, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  transition: padding 0.3s;
+}
+
+.nav-logo {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--charcoal);
+  text-decoration: none;
+}
+
+.nav-logo span {
+  color: var(--gold);
+  font-style: italic;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--warm-gray);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--charcoal);
+}
+
+.nav-cta {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  background: var(--charcoal);
+  color: var(--warm-white);
+  border: none;
+  padding: 0.65rem 1.6rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.nav-cta:hover {
+  background: var(--gold);
+}
+
+/* ── Hamburger (Mobile) ── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  background: var(--charcoal);
+  transition: 0.3s;
+}
+
+/* ── Mobile Menu Dropdown ── */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  gap: 0;
+  position: fixed;
+  top: 72px; left: 0; right: 0;
+  background: var(--warm-white);
+  border-bottom: 1px solid var(--border);
+  z-index: 99;
+  padding: 1rem 0;
+}
+
+.mobile-menu.open {
+  display: flex;
+}
+
+.mobile-menu a {
+  padding: 0.9rem 5vw;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+}

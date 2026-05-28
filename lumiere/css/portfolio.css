@@ -1,0 +1,106 @@
+/* ============================================
+   PORTFOLIO.CSS — Gallery & Filter Styles
+   ============================================ */
+
+#portfolio {
+  background: var(--cream);
+}
+
+/* ── Filter Buttons ── */
+.portfolio-filters {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin: 3rem 0 2.5rem;
+}
+
+.filter-btn {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.5rem 1.2rem;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--warm-gray);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: var(--charcoal);
+  color: var(--warm-white);
+  border-color: var(--charcoal);
+}
+
+/* ── Grid Layout ── */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+/* Wide items */
+.portfolio-item:nth-child(1) { grid-column: span 2; }
+.portfolio-item:nth-child(5) { grid-column: span 2; }
+
+/* ── Individual Items ── */
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.photo-placeholder {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.5);
+  position: relative;
+}
+
+/* Individual placeholder colours — swap these for real <img> tags */
+.portfolio-item:nth-child(1) .photo-placeholder { background: #B8A88A; aspect-ratio: 16 / 9; }
+.portfolio-item:nth-child(2) .photo-placeholder { background: #8A7A6A; }
+.portfolio-item:nth-child(3) .photo-placeholder { background: #C4B49A; }
+.portfolio-item:nth-child(4) .photo-placeholder { background: #7A6A5A; }
+.portfolio-item:nth-child(5) .photo-placeholder { background: #A09080; aspect-ratio: 16 / 9; }
+.portfolio-item:nth-child(6) .photo-placeholder { background: #C8B8A8; }
+
+/* ── Hover Overlay ── */
+.portfolio-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(28, 25, 22, 0.6);
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+  opacity: 1;
+}
+
+.portfolio-overlay span {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-style: italic;
+  color: var(--warm-white);
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-overlay small {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+}

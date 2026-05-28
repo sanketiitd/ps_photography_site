@@ -1,0 +1,137 @@
+/* ============================================
+   SERVICES.CSS — Pricing Cards
+   ============================================ */
+
+#services {
+  background: var(--charcoal);
+}
+
+#services .section-title { color: var(--warm-white); }
+#services .section-sub   { color: rgba(253, 250, 246, 0.55); }
+#services .section-tag   { color: var(--gold); }
+
+/* ── Grid ── */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin-top: 4rem;
+}
+
+/* ── Card Base ── */
+.service-card {
+  background: rgba(255, 255, 255, 0.04);
+  padding: 3rem 2.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition: background 0.3s;
+  position: relative;
+}
+
+.service-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.service-num {
+  font-family: var(--font-serif);
+  font-size: 3.5rem;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--gold);
+  opacity: 0.4;
+  line-height: 1;
+  margin-bottom: 1.5rem;
+}
+
+.service-title {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--warm-white);
+  margin-bottom: 1rem;
+}
+
+.service-desc {
+  font-size: 0.9rem;
+  color: rgba(253, 250, 246, 0.5);
+  line-height: 1.9;
+  margin-bottom: 2rem;
+}
+
+.service-price {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  color: var(--gold-light);
+  font-weight: 300;
+}
+
+.service-price span {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(253, 250, 246, 0.4);
+  display: block;
+  margin-top: 0.2rem;
+}
+
+/* ── Feature List ── */
+.service-features {
+  list-style: none;
+  margin: 1.5rem 0 2.5rem;
+}
+
+.service-features li {
+  font-size: 0.85rem;
+  color: rgba(253, 250, 246, 0.6);
+  padding: 0.4rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.service-features li::before {
+  content: '—';
+  color: var(--gold);
+  font-family: var(--font-serif);
+}
+
+/* ── Featured Card ── */
+.service-featured {
+  background: rgba(184, 150, 90, 0.12);
+  border-color: rgba(184, 150, 90, 0.3);
+}
+
+.featured-badge {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--gold);
+  color: var(--charcoal);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.35rem 1.2rem;
+  font-family: var(--font-sans);
+  white-space: nowrap;
+}
+
+/* ── Service CTA Button ── */
+.btn-service {
+  display: inline-block;
+  border: 1px solid rgba(184, 150, 90, 0.5);
+  color: var(--gold-light);
+  padding: 0.75rem 1.8rem;
+  text-decoration: none;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: all 0.2s;
+}
+
+.btn-service:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--charcoal);
+}

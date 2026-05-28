@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lumière Studio — Portrait &amp; Wedding Photography</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets — load order matters -->
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/nav.css" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/portfolio.css" />
+  <link rel="stylesheet" href="css/about.css" />
+  <link rel="stylesheet" href="css/services.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+<!-- ============================================================
+     NAVIGATION
+     To edit links: update .nav-links and .mobile-menu below
+     ============================================================ -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">Lumière <span>Studio</span></a>
+  <ul class="nav-links">
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#blog">Journal</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Book a Session</a>
+  <div class="hamburger" id="hamburger" aria-label="Toggle menu" role="button" tabindex="0">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- Mobile dropdown (links mirrored from nav above) -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#portfolio" onclick="closeMobileMenu()">Portfolio</a>
+  <a href="#about"     onclick="closeMobileMenu()">About</a>
+  <a href="#services"  onclick="closeMobileMenu()">Services</a>
+  <a href="#blog"      onclick="closeMobileMenu()">Journal</a>
+  <a href="#contact"   onclick="closeMobileMenu()">Book a Session</a>
+</div>
+
+
+<!-- ============================================================
+     HERO
+     Edit headline, tagline, and button links here
+     ============================================================ -->
+<section id="hero">
+  <div class="hero-text">
+    <p class="hero-tag">Portrait &amp; Wedding Photography</p>
+    <h1 class="hero-h1">
+      Capturing<br><em>timeless</em><br>moments
+    </h1>
+    <p class="hero-desc">
+      Every photograph is a window into a feeling that words cannot hold.
+      We craft images that tell your story with honesty, beauty, and grace.
+    </p>
+    <div class="hero-btns">
+      <a href="#portfolio" class="btn-primary">View Portfolio</a>
+      <a href="#contact"   class="btn-outline">Book a Session</a>
+    </div>
+  </div>
+
+  <!-- Right-side image panel (hidden on mobile) -->
+  <div class="hero-img-wrap">
+    <div class="hero-photo-art">
+      <div class="photo-cell" style="background: linear-gradient(160deg,#C8B89A,#8A7A6A);">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1"><circle cx="12" cy="8" r="3"/><path d="M12 14c-5 0-8 2-8 3v1h16v-1c0-1-3-3-8-3z"/></svg>
+      </div>
+      <div class="photo-cell" style="background: linear-gradient(160deg,#D4C4AE,#B0A090);">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5-5 5-2-2-4 4"/></svg>
+      </div>
+      <div class="photo-cell" style="background: linear-gradient(160deg,#B8A48E,#907060);">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </div>
+    </div>
+    <div class="hero-img-label">
+      <p>Featured Work</p>
+      <h3>Sofia &amp; Amir Wedding '24</h3>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     PORTFOLIO
+     To add photos: replace .photo-placeholder divs with <img> tags
+     To add categories: add a filter button + data-cat to items
+     ============================================================ -->
+<section id="portfolio">
+  <p class="section-tag">Our Work</p>
+  <h2 class="section-title">A glimpse into<br><em>our gallery</em></h2>
+  <p class="section-sub">Explore our collection of portrait sessions, weddings, and editorial work spanning over a decade.</p>
+
+  <div class="portfolio-filters">
+    <button class="filter-btn active"  onclick="filterGallery('all', this)">All</button>
+    <button class="filter-btn"         onclick="filterGallery('wedding', this)">Weddings</button>
+    <button class="filter-btn"         onclick="filterGallery('portrait', this)">Portraits</button>
+    <button class="filter-btn"         onclick="filterGallery('editorial', this)">Editorial</button>
+  </div>
+
+  <div class="portfolio-grid">
+
+    <div class="portfolio-item" data-cat="wedding">
+      <!-- Replace div below with: <img src="images/wedding-1.jpg" alt="Priya & Daniel Wedding" /> -->
+      <div class="photo-placeholder" style="background: linear-gradient(135deg, #C4B49A, #907860);">
+        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="0.8"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5-5 5-2-2-4 4"/></svg>
+      </div>
+      <div class="portfolio-overlay">
+        <span>Priya &amp; Daniel</span>
+        <small>Wedding — Goa</small>
+      </div>
+    </div>
+
+    <div class="portfolio-item" data-cat="portrait">
+      <div class="photo-placeholder" style="background: linear-gradient(135deg, #8A7A6A, #5A4A3A);">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="0.8"><circle cx="12" cy="8" r="4"/><path d="M12 14c-5 0-8 2-8 3v1h16v-1c0-1-3-3-8-3z"/></svg>
+      </div>
+      <div class="portfolio-overlay">
+        <span>Aditi Sharma</span>
+        <small>Portrait Session</small>
+      </div>
+    </div>
+
+    <div class="portfolio-item" data-cat="editorial">
+      <div class="photo-placeholder" style="background: linear-gradient(135deg, #C4B49A, #8A7060);">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="0.8"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5-5 5-2-2-4 4"/></svg>
+      </div>
+      <div class="portfolio-overlay">
+        <span>Golden Hour</span>
+        <small>Editorial</small>
+      </div>
+    </div>
+
+    <div class="portfolio-item" data-cat="portrait">
+      <div class="photo-placeholder" style="background: linear-gradient(135deg, #7A6A5A, #4A3A2A);">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="0.8"><circle cx="12" cy="8" r="4"/><path d="M12 14c-5 0-8 2-8 3v1h16v-1c0-1-3-3-8-3z"/></svg>
+      </div>
+      <div class="portfolio-overlay">
+        <span>Rohan Mehta</span>
+        <small>Portrait Session</small>
+      </div>
+    </div>
+
+    <div class="portfolio-item" data-cat="wedding">
+      <div class="photo-placeholder" style="background: linear-gradient(135deg, #A09080, #6A5848);">
+        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="0.8"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5-5 5-2-2-4 4"/></svg>
+      </div>
+      <div class="portfolio-overlay">
+        <span>Meera &amp; Karan</span>
+        <small>Wedding — Mumbai</small>
+      </div>
+    </div>
+
+    <div class="portfolio-item" data-cat="editorial">
+      <div class="photo-placeholder" style="background: linear-gradient(135deg, #C8B8A8, #9A8878);">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="0.8"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5-5 5-2-2-4 4"/></svg>
+      </div>
+      <div class="portfolio-overlay">
+        <span>Soft Bloom</span>
+        <small>Editorial</small>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============================================================
+     ABOUT
+     Edit stats, bio text, and signature name here
+     ============================================================ -->
+<section id="about">
+  <div class="about-img-wrap">
+    <div class="about-img-main">
+      <!-- Replace with: <img src="images/photographer.jpg" alt="Kavya, Lead Photographer" /> -->
+      <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="0.7"><circle cx="12" cy="8" r="4"/><path d="M12 14c-5 0-8 2-8 3v1h16v-1c0-1-3-3-8-3z"/></svg>
+    </div>
+    <div class="about-img-accent">
+      <div class="about-img-accent-inner">
+        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="0.7"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5-5 5-2-2-4 4"/></svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="about-text">
+    <p class="section-tag">About the Studio</p>
+    <h2 class="section-title">More than<br><em>photographs</em></h2>
+    <p class="section-sub">
+      We are Lumière Studio — a boutique photography practice founded in 2012 and dedicated to the art of intimate, emotionally resonant imagery. Our approach is unhurried, thoughtful, and rooted in building genuine connection before the shutter ever clicks.
+    </p>
+    <p style="font-size: 1rem; color: var(--warm-gray); line-height: 1.9; margin-top: 1.5rem; max-width: 520px;">
+      Based in Mumbai, we travel across India and beyond for destination weddings and editorial work. Each session is a collaboration — your story, our eye.
+    </p>
+
+    <!-- Edit stats below -->
+    <div class="about-stats">
+      <div class="stat-item">
+        <div class="stat-num">350+</div>
+        <div class="stat-label">Weddings Captured</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">12</div>
+        <div class="stat-label">Years of Experience</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">18</div>
+        <div class="stat-label">Cities Visited</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">100%</div>
+        <div class="stat-label">Client Satisfaction</div>
+      </div>
+    </div>
+
+    <p class="signature">Kavya &amp; Team</p>
+    <a href="#contact" class="btn-outline" style="display: inline-block; margin-top: 2rem;">Start a Conversation</a>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SERVICES & PRICING
+     Edit prices, features, and package names here
+     ============================================================ -->
+<section id="services">
+  <p class="section-tag">What We Offer</p>
+  <h2 class="section-title">Services &amp; <em>Pricing</em></h2>
+  <p class="section-sub">Transparent, inclusive packages designed for couples and individuals who value artistry and intentionality.</p>
+
+  <div class="services-grid">
+
+    <!-- Package 1: Portrait -->
+    <div class="service-card">
+      <div class="service-num">01</div>
+      <div class="service-title">Portrait Session</div>
+      <div class="service-desc">For individuals, families, or professionals seeking timeless, beautifully lit portraits.</div>
+      <div class="service-price">₹18,000 <span>Starting price</span></div>
+      <ul class="service-features">
+        <li>2-hour session</li>
+        <li>One location of your choice</li>
+        <li>40 edited digital images</li>
+        <li>Private online gallery</li>
+      </ul>
+      <a href="#contact" class="btn-service">Book Now</a>
+    </div>
+
+    <!-- Package 2: Wedding (Featured) -->
+    <div class="service-card service-featured">
+      <div class="featured-badge">Most Popular</div>
+      <div class="service-num">02</div>
+      <div class="service-title">Wedding Full Day</div>
+      <div class="service-desc">Complete wedding-day coverage from getting ready to the final dance, with two photographers.</div>
+      <div class="service-price">₹1,20,000 <span>Full day, 2 shooters</span></div>
+      <ul class="service-features">
+        <li>10–12 hours of coverage</li>
+        <li>Two experienced photographers</li>
+        <li>400+ edited digital images</li>
+        <li>Online gallery + USB album</li>
+        <li>One pre-wedding consultation</li>
+      </ul>
+      <a href="#contact" class="btn-service">Book Now</a>
+    </div>
+
+    <!-- Package 3: Luxury -->
+    <div class="service-card">
+      <div class="service-num">03</div>
+      <div class="service-title">Luxury Wedding</div>
+      <div class="service-desc">Our premium offering for multi-day celebrations, destination weddings, and editorial projects.</div>
+      <div class="service-price">₹2,50,000 <span>Custom packages</span></div>
+      <ul class="service-features">
+        <li>Multi-day full coverage</li>
+        <li>Drone &amp; videography add-on</li>
+        <li>Fine art printed album</li>
+        <li>Pre-wedding shoot included</li>
+        <li>Dedicated creative director</li>
+      </ul>
+      <a href="#contact" class="btn-service">Enquire</a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============================================================
+     TESTIMONIALS
+     Edit client quotes, names, and event details here
+     ============================================================ -->
+<section id="testimonials">
+  <p class="section-tag">Kind Words</p>
+  <h2 class="section-title">What our <em>clients say</em></h2>
+  <div class="testimonials-grid">
+
+    <div class="testimonial-card">
+      <div class="quote-mark">"</div>
+      <p class="testimonial-text">Lumière captured our wedding in a way that left us speechless. Every photo tells the story of our day with such genuine warmth and artistry.</p>
+      <div class="testimonial-author">
+        <div class="author-avatar" style="background: linear-gradient(135deg, #B8965A, #D4B07A);">P</div>
+        <div>
+          <div class="stars">★★★★★</div>
+          <div class="author-name">Priya Kapoor</div>
+          <div class="author-event">Wedding, Goa — 2024</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="quote-mark">"</div>
+      <p class="testimonial-text">I was nervous in front of the camera, but they made me feel completely at ease. The portraits are beyond anything I imagined possible.</p>
+      <div class="testimonial-author">
+        <div class="author-avatar" style="background: linear-gradient(135deg, #8A7A6A, #A89880);">R</div>
+        <div>
+          <div class="stars">★★★★★</div>
+          <div class="author-name">Rohan Desai</div>
+          <div class="author-event">Portrait Session — 2024</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="quote-mark">"</div>
+      <p class="testimonial-text">Our destination wedding in Udaipur was documented with such elegance. Years from now, these images are what our grandchildren will see.</p>
+      <div class="testimonial-author">
+        <div class="author-avatar" style="background: linear-gradient(135deg, #C4A07A, #A08060);">M</div>
+        <div>
+          <div class="stars">★★★★★</div>
+          <div class="author-name">Meera &amp; Arjun</div>
+          <div class="author-event">Wedding, Udaipur — 2023</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============================================================
+     BLOG / JOURNAL
+     Edit article titles, tags, and dates here
+     ============================================================ -->
+<section id="blog">
+  <p class="section-tag">Studio Journal</p>
+  <h2 class="section-title">Stories &amp; <em>Insights</em></h2>
+  <p class="section-sub">Behind the scenes, thoughts on light, and how we see the world.</p>
+
+  <div class="blog-grid">
+
+    <div class="blog-card">
+      <div class="blog-img">
+        <!-- Replace with: <img src="images/blog-1.jpg" alt="..." /> -->
+        <div class="blog-img-inner"></div>
+      </div>
+      <p class="blog-tag">Wedding</p>
+      <h3 class="blog-title">How We Choose the Perfect Light for Your Wedding Day</h3>
+      <p class="blog-excerpt">Light is the first character in every photograph we make. Here is how we scout, plan, and adapt to create images that glow from within.</p>
+      <p class="blog-meta">May 12, 2025 &nbsp;·&nbsp; 7 min read</p>
+    </div>
+
+    <div class="blog-card">
+      <div class="blog-img">
+        <div class="blog-img-inner"></div>
+      </div>
+      <p class="blog-tag">Portrait</p>
+      <h3 class="blog-title">Why Being Nervous is Actually a Good Thing</h3>
+      <p class="blog-meta">April 3, 2025 &nbsp;·&nbsp; 4 min read</p>
+    </div>
+
+    <div class="blog-card">
+      <div class="blog-img">
+        <div class="blog-img-inner"></div>
+      </div>
+      <p class="blog-tag">Behind the Scenes</p>
+      <h3 class="blog-title">Udaipur Diaries: A Destination Wedding</h3>
+      <p class="blog-meta">February 18, 2025 &nbsp;·&nbsp; 5 min read</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============================================================
+     CONTACT
+     Edit phone, email, location, and form options here
+     ============================================================ -->
+<section id="contact">
+  <div>
+    <p class="section-tag">Get in Touch</p>
+    <h2 class="section-title">Let's create<br><em>something</em><br>beautiful</h2>
+    <p class="section-sub">We'd love to hear about your story. Fill in the form and we'll be in touch within 24 hours.</p>
+
+    <div class="contact-info">
+
+      <div class="contact-item">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.84 12a19.79 19.79 0 0 1-3.07-8.67 2 2 0 0 1 2-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <div>
+          <div class="contact-label">Phone</div>
+          <div class="contact-value">+91 98765 43210</div>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div>
+          <div class="contact-label">Email</div>
+          <div class="contact-value">hello@lumierestudio.in</div>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div>
+          <div class="contact-label">Studio</div>
+          <div class="contact-value">Bandra West, Mumbai, India</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="contact-form">
+    <div class="form-row">
+      <div class="form-group">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" placeholder="Your name" />
+      </div>
+      <div class="form-group">
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" placeholder="Your surname" />
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input type="email" id="email" placeholder="you@email.com" />
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" placeholder="+91 00000 00000" />
+    </div>
+    <div class="form-group">
+      <label for="service">Service Interested In</label>
+      <select id="service">
+        <option value="">Select a service...</option>
+        <option>Wedding Full Day</option>
+        <option>Luxury Wedding</option>
+        <option>Portrait Session</option>
+        <option>Editorial / Commercial</option>
+        <option>Other</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="date">Tentative Date</label>
+      <input type="date" id="date" />
+    </div>
+    <div class="form-group">
+      <label for="message">Your Message</label>
+      <textarea id="message" placeholder="Tell us a little about your vision..."></textarea>
+    </div>
+    <button class="form-submit" onclick="submitForm()">Send Message</button>
+    <div id="form-success">✦ &nbsp; Thank you! We'll be in touch within 24 hours.</div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FOOTER
+     Edit social links and footer text here
+     ============================================================ -->
+<footer>
+  <div class="footer-top">
+    <a href="#hero" class="footer-logo">Lumière <span>Studio</span></a>
+    <div class="footer-socials">
+      <a href="#" class="social-link" aria-label="Instagram">IG</a>
+      <a href="#" class="social-link" aria-label="Facebook">FB</a>
+      <a href="#" class="social-link" aria-label="YouTube">YT</a>
+      <a href="#" class="social-link" aria-label="LinkedIn">IN</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Lumière Studio. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+
+<!-- JavaScript — loaded last so DOM is ready -->
+<script src="js/main.js"></script>
+
+</body>
+</html>

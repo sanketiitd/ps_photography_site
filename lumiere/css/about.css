@@ -1,0 +1,84 @@
+/* ============================================
+   ABOUT.CSS — About / Studio Section
+   ============================================ */
+
+#about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8vw;
+  align-items: center;
+}
+
+/* ── Image Column ── */
+.about-img-wrap {
+  position: relative;
+}
+
+.about-img-main {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  background: linear-gradient(160deg, #D4C4B0, #A89880);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-img-accent {
+  position: absolute;
+  bottom: -2rem;
+  right: -2rem;
+  width: 55%;
+  aspect-ratio: 1;
+  background: var(--cream);
+  border: 8px solid var(--warm-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-img-accent-inner {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #E8D8C4, #C0A888);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Stats Grid ── */
+.about-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.stat-item {
+  border-left: 2px solid var(--gold);
+  padding-left: 1.2rem;
+}
+
+.stat-num {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: var(--charcoal);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--warm-gray);
+  margin-top: 0.4rem;
+}
+
+/* ── Signature ── */
+.signature {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-style: italic;
+  color: var(--gold);
+  margin-top: 2rem;
+}

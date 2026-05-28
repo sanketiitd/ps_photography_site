@@ -1,0 +1,104 @@
+/* ============================================
+   BASE.CSS — Variables, Reset, Global Styles
+   ============================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── CSS Variables (Design Tokens) ── */
+:root {
+  --cream:      #F7F3EE;
+  --warm-white: #FDFAF6;
+  --charcoal:   #1C1916;
+  --warm-gray:  #6B6560;
+  --gold:       #B8965A;
+  --gold-light: #D4B07A;
+  --border:     rgba(28, 25, 22, 0.12);
+
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans:  'Jost', sans-serif;
+}
+
+/* ── Global ── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--warm-white);
+  color: var(--charcoal);
+  font-weight: 300;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ── Shared Section Styles ── */
+section {
+  padding: 8rem 8vw;
+}
+
+.section-tag {
+  font-size: 0.72rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 4vw, 3.8rem);
+  font-weight: 300;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.section-title em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.section-sub {
+  font-size: 1rem;
+  color: var(--warm-gray);
+  max-width: 520px;
+  line-height: 1.9;
+}
+
+/* ── Shared Buttons ── */
+.btn-primary {
+  display: inline-block;
+  background: var(--charcoal);
+  color: var(--warm-white);
+  padding: 1rem 2.4rem;
+  text-decoration: none;
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: background 0.2s;
+}
+
+.btn-primary:hover {
+  background: var(--gold);
+}
+
+.btn-outline {
+  display: inline-block;
+  border: 1px solid var(--charcoal);
+  color: var(--charcoal);
+  padding: 1rem 2.4rem;
+  text-decoration: none;
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: all 0.2s;
+}
+
+.btn-outline:hover {
+  background: var(--charcoal);
+  color: var(--warm-white);
+}
